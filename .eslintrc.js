@@ -28,5 +28,6 @@ module.exports = {
     'guard-for-in': 0,
     'no-plusplus': 0,
     'no-use-before-define': 0,
+    'import/no-cycle': 0,
   }
 };
