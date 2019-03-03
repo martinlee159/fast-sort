@@ -1,5 +1,5 @@
 const { expect, assert } = require('chai');
-const sort = require('../../src/sort');
+const sort = require('../../sort');
 
 describe('sort', () => {
   let flatArray;
