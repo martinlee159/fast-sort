@@ -120,8 +120,8 @@ const sort = function(direction, ctx, sortBy) {
 
 module.exports = function(ctx) {
   return {
-    asc: (sortBy) => sort(1, ctx, sortBy),
-    desc: (sortBy) => sort(-1, ctx, sortBy),
+    asc: sortBy => sort(1, ctx, sortBy),
+    desc: sortBy => sort(-1, ctx, sortBy),
     by: (sortBy) => {
       if (!Array.isArray(ctx)) return ctx;
 

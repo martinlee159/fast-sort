@@ -17,7 +17,7 @@ module.exports = {
     'max-len': ['error', 100, 2, { ignoreComments: true }],
     // Functions
     'func-names': ['error', 'never'],
-    'arrow-parens': ['error', 'always'],
+    'arrow-parens': ['error', "as-needed", { "requireForBlockBody": true }],
     'space-before-function-paren': ['error', 'never'],
     'no-param-reassign': ['error', { props: false }],
     'no-prototype-builtins': 0,
