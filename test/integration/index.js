@@ -1,9 +1,9 @@
-/* eslint-disable no-console, global-require, import/no-extraneous-dependencies, import/no-dynamic-require */
+/* eslint-disable no-console, global-require, import/no-unresolved */
 
 process.chdir(__dirname); // Enable running from package script
 
 const assert = require('assert');
-const exec = require('child_process').exec;
+const { exec } = require('child_process');
 
 function run(err) {
   if (err) {
