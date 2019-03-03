@@ -1,5 +1,3 @@
-/* eslint no-use-before-define: 0 */
-
 // >>> SORTERS <<<
 
 const sorter = function(direction, a, b) {
@@ -29,7 +27,7 @@ const functionSorter = function(direction, sortBy, a, b) {
 };
 
 /**
- * Used when we have sorting by multyple properties and when current sorter is function
+ * Used when we have sorting by multiple properties and when current sorter is function
  * @example sort(users).asc([p => p.address.city, p => p.firstName])
  */
 const multiPropFunctionSorter = function(sortBy, thenBy, depth, direction, a, b) {
@@ -67,14 +65,14 @@ const multiPropObjectSorter = function(sortByObj, thenBy, depth, _direction, a, 
  * Return multiProperty sort handler based on sortBy value
  */
 const getMultiPropertySorter = function(sortBy) {
-  const type = typeof sortBy;
-  if (type === 'string') {
-    return multiPropStringSorter;
-  } else if (type === 'function') {
-    return multiPropFunctionSorter;
+  switch (typeof sortBy) {
+    case 'string':
+      return multiPropStringSorter;
+    case 'function':
+      return multiPropFunctionSorter;
+    default:
+      return multiPropObjectSorter;
   }
-
-  return multiPropObjectSorter;
 };
 
 const multiPropEqualityHandler = function(valA, valB, thenBy, depth, direction, a, b) {
